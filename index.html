@@ -301,7 +301,7 @@
     public static void main(String[] args) {
         Parcel2 p = new Parcel2();
         p.ship(&quot;Beijing&quot;); //通过外部类的方法创建内部类，并调用内部类对象的方法
-        Parcel2.Destination d  = p.Destination(&quot;Shanghai&quot;); //显式指明内部类的类型，创建内部类
+        Parcel2.Destination d  = p.to(&quot;Shanghai&quot;); //显式指明内部类的类型，创建内部类
         System.out.println(d.readLabel());
     }
 }

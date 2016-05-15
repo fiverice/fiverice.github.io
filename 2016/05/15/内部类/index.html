@@ -102,7 +102,7 @@ public class Parcel2 {
     class Destination {
         private String label;
         D">
-<meta property="og:updated_time" content="2016-05-15T08:52:04.000Z">
+<meta property="og:updated_time" content="2016-05-15T09:00:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="内部类">
 <meta name="twitter:description" content="将一个类的定义放在另一个类的定义内部，这就是内部类。
@@ -313,7 +313,7 @@ public class Parcel2 {
     public static void main(String[] args) {
         Parcel2 p = new Parcel2();
         p.ship(&quot;Beijing&quot;); //通过外部类的方法创建内部类，并调用内部类对象的方法
-        Parcel2.Destination d  = p.Destination(&quot;Shanghai&quot;); //显式指明内部类的类型，创建内部类
+        Parcel2.Destination d  = p.to(&quot;Shanghai&quot;); //显式指明内部类的类型，创建内部类
         System.out.println(d.readLabel());
     }
 }
