@@ -276,37 +276,12 @@
 
       
         
-          
-            <p>这是一道面试常考题型。编写一个方法，洗一副牌。要求做到完美洗牌，换言之，这副牌52!种排列组合出现的概率相同。假设给定一个完美的随机数发生器。</p>
-<h3 id="递归解法"><a href="#递归解法" class="headerlink" title="递归解法"></a>递归解法</h3><p>假定有个方法<code>shuffle()</code>对n-1个元素有效，可以用它来打乱n个元素的次序吗？<br>答案是肯定的。我们会先打乱前n-1个元素的次序，然后取出第n个元素，将它与数组中的前n个元素随机交换。<br>代码如下：</p>
-<pre><code>/*获得取值范围为[lower,higher]的随机数*/
-int rand(int lower, int higher) {
-    return lower + (int)(Math.random() * (higher -lower + 1));
-}
-int[] shuffleArrayRecursively(int[] cards, int i) {
-    if(i == 0)
-        return cards;
-    shuffleArrayRecursively(cards, i - 1); //打乱前i-1个元素
-    /*交换元素k和i*/
-    int k = rand(0, i);
-    int temp = cards[k];
-    cards[k] = cards[i];
-    cards[i] = temp;
-    /*返回被打乱的元素*/
-    return cards;
-}
-</code></pre><h3 id="迭代解法"><a href="#迭代解法" class="headerlink" title="迭代解法"></a>迭代解法</h3><p>迭代解法也很简单，遍历整个数组，对每个元素i，将<code>array[i]</code>与取值范围在[0, i]之间的随机元素交换。<br>代码如下：</p>
-<pre><code>void shuffleArrayInteratively(int[] cards) {
-    for(int i = 0; i &lt; cards.length; i++) {
-        int k = rand(0, i);
-        int temp = cards[k];
-        cards[k] = cards[i];
-        cards[i] =  temp;
-    }
-}
-</code></pre><p>这样就用迭代法实现该算法了。</p>
-
-          
+          <p>这是一道面试常考题型。编写一个方法，洗一副牌。要求做到完美洗牌，换言之，这副牌52!种排列组合出现的概率相同。假设给定一个完美的随机数发生器。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/05/16/洗牌算法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -397,46 +372,12 @@ int[] shuffleArrayRecursively(int[] cards, int i) {
 
       
         
-          
-            <p>将一个类的定义放在另一个类的定义内部，这就是<strong>内部类</strong>。</p>
-<h2 id="创建内部类"><a href="#创建内部类" class="headerlink" title="创建内部类"></a>创建内部类</h2><p>把类的定义置于外围类的里面。但通常更典型的应用场景为，外部类有一个方法，该方法返回一个指向内部类的引用，代码如下：</p>
-<pre><code>public class Parcel2 { 
-    //创建内部类Destination
-    class Destination {
-        private String label;
-        Destination(String whereTo) {
-            label = whereTo;
-        }
-        String readLabel() {
-            return label;
-        }
-    }
-    //返回指向内部类引用的方法
-    public Destination to(String s) {
-        return new Destination(s);
-    }
-    public void ship(String dest) {
-        Destination d = to(dest);
-        System.out.println(d.readLabel());
-    }
-    public static void main(String[] args) {
-        Parcel2 p = new Parcel2();
-        p.ship(&quot;Beijing&quot;); //通过外部类的方法创建内部类，并调用内部类对象的方法
-        Parcel2.Destination d  = p.to(&quot;Shanghai&quot;); //显式指明内部类的类型，创建内部类
-        System.out.println(d.readLabel());
-    }
-}
-</code></pre><p>如果想在外部类的非静态方法之外的任意位置创建内部类的对象，必须像在main()方法中一样，显式指明内部类的类型：<code>OuterClassName.InnerClassName</code>。</p>
-<h2 id="链接到外部类"><a href="#链接到外部类" class="headerlink" title="链接到外部类"></a>链接到外部类</h2><p>内部类不仅是一种名字隐藏或组织代码的方式。当生成一个内部类对象时，此对象与生成它的外围对象就有了联系。它能访问外围对象的<em>所有成员</em></p>
-<h2 id="使用-this与-new"><a href="#使用-this与-new" class="headerlink" title="使用.this与.new"></a>使用.this与.new</h2><p>敬请期待</p>
-<h2 id="嵌套类"><a href="#嵌套类" class="headerlink" title="嵌套类"></a>嵌套类</h2><p>如果不需要内部类对象与其外围类对象之间有联系，那么可以将内部类声明为<code>static</code>。这通常称为<strong>嵌套类</strong>，也叫<strong>static class</strong>。<br>请记住，普通内部类对象隐式地保存了一个引用，指向创建它的外围类对象，然而，当内部类声明为<code>static</code>时，情况发生了变化，这意味着：</p>
-<ol>
-<li>要创建嵌套类的对象，并不需要其外围类的对象。</li>
-<li>不能从嵌套类的对象中访问非静态的外围类对象。</li>
-<li>普通内部类的字段与方法，只能放在类的外部层次上，所以普通内部类不能有<code>static</code>数据和<code>static</code>字段，也不能包含嵌套类，但是嵌套类可以包含所有这些东西。</li>
-</ol>
-
-          
+          <p>将一个类的定义放在另一个类的定义内部，这就是<strong>内部类</strong>。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/05/15/内部类/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
