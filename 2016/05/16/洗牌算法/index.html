@@ -85,21 +85,21 @@
 
 
 <meta name="description" content="这是一道面试常考题型。编写一个方法，洗一副牌。要求做到完美洗牌，换言之，这副牌52!种排列组合出现的概率相同。假设给定一个完美的随机数发生器。
-###递归解法假定有个方法shuffle()对n-1个元素有效，可以用它来打乱n个元素的次序吗？答案是肯定的。我们会先打乱前n-1个元素的次序，然后取出第n个元素，将它与数组中的前n个元素随机交换。代码如下：
-/*获得取值范围为[lower,higher]">
+递归解法假定有个方法shuffle()对n-1个元素有效，可以用它来打乱n个元素的次序吗？答案是肯定的。我们会先打乱前n-1个元素的次序，然后取出第n个元素，将它与数组中的前n个元素随机交换。代码如下：
+/*获得取值范围为[lower,higher]的随机">
 <meta property="og:type" content="article">
 <meta property="og:title" content="洗牌算法">
 <meta property="og:url" content="http://yoursite.com/2016/05/16/洗牌算法/index.html">
 <meta property="og:site_name" content="Fiverice's Blog">
 <meta property="og:description" content="这是一道面试常考题型。编写一个方法，洗一副牌。要求做到完美洗牌，换言之，这副牌52!种排列组合出现的概率相同。假设给定一个完美的随机数发生器。
-###递归解法假定有个方法shuffle()对n-1个元素有效，可以用它来打乱n个元素的次序吗？答案是肯定的。我们会先打乱前n-1个元素的次序，然后取出第n个元素，将它与数组中的前n个元素随机交换。代码如下：
-/*获得取值范围为[lower,higher]">
-<meta property="og:updated_time" content="2016-05-16T12:38:24.000Z">
+递归解法假定有个方法shuffle()对n-1个元素有效，可以用它来打乱n个元素的次序吗？答案是肯定的。我们会先打乱前n-1个元素的次序，然后取出第n个元素，将它与数组中的前n个元素随机交换。代码如下：
+/*获得取值范围为[lower,higher]的随机">
+<meta property="og:updated_time" content="2016-05-16T12:40:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="洗牌算法">
 <meta name="twitter:description" content="这是一道面试常考题型。编写一个方法，洗一副牌。要求做到完美洗牌，换言之，这副牌52!种排列组合出现的概率相同。假设给定一个完美的随机数发生器。
-###递归解法假定有个方法shuffle()对n-1个元素有效，可以用它来打乱n个元素的次序吗？答案是肯定的。我们会先打乱前n-1个元素的次序，然后取出第n个元素，将它与数组中的前n个元素随机交换。代码如下：
-/*获得取值范围为[lower,higher]">
+递归解法假定有个方法shuffle()对n-1个元素有效，可以用它来打乱n个元素的次序吗？答案是肯定的。我们会先打乱前n-1个元素的次序，然后取出第n个元素，将它与数组中的前n个元素随机交换。代码如下：
+/*获得取值范围为[lower,higher]的随机">
 
 
 
@@ -278,7 +278,7 @@
 
       
         <p>这是一道面试常考题型。编写一个方法，洗一副牌。要求做到完美洗牌，换言之，这副牌52!种排列组合出现的概率相同。假设给定一个完美的随机数发生器。</p>
-<p>###递归解法<br>假定有个方法shuffle()对n-1个元素有效，可以用它来打乱n个元素的次序吗？<br>答案是肯定的。我们会先打乱前n-1个元素的次序，然后取出第n个元素，将它与数组中的前n个元素随机交换。<br>代码如下：</p>
+<h3 id="递归解法"><a href="#递归解法" class="headerlink" title="递归解法"></a>递归解法</h3><p>假定有个方法<code>shuffle()</code>对n-1个元素有效，可以用它来打乱n个元素的次序吗？<br>答案是肯定的。我们会先打乱前n-1个元素的次序，然后取出第n个元素，将它与数组中的前n个元素随机交换。<br>代码如下：</p>
 <pre><code>/*获得取值范围为[lower,higher]的随机数*/
 int rand(int lower, int higher) {
     return lower + (int)(Math.random() * (higher -lower + 1));
@@ -295,7 +295,7 @@ int[] shuffleArrayRecursively(int[] cards, int i) {
     /*返回被打乱的元素*/
     return cards;
 }
-</code></pre><h3 id="迭代解法"><a href="#迭代解法" class="headerlink" title="迭代解法"></a>迭代解法</h3><p>迭代解法也很简单，遍历整个数组，对每个元素i，将array[i]与取值范围在[0,i]之间的随机元素交换。<br>代码如下：</p>
+</code></pre><h3 id="迭代解法"><a href="#迭代解法" class="headerlink" title="迭代解法"></a>迭代解法</h3><p>迭代解法也很简单，遍历整个数组，对每个元素i，将<code>array[i]</code>与取值范围在[0, i]之间的随机元素交换。<br>代码如下：</p>
 <pre><code>void shuffleArrayInteratively(int[] cards) {
     for(int i = 0; i &lt; cards.length; i++) {
         int k = rand(0, i);
@@ -448,7 +448,7 @@ int[] shuffleArrayRecursively(int[] cards, int i) {
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#迭代解法"><span class="nav-number">1.</span> <span class="nav-text">迭代解法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#递归解法"><span class="nav-number">1.</span> <span class="nav-text">递归解法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#迭代解法"><span class="nav-number">2.</span> <span class="nav-text">迭代解法</span></a></li></ol></div>
             
           </div>
         </section>
